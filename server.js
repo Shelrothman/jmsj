@@ -7,6 +7,7 @@ const passport = require("./config/passport");
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
+const dotenv = require("dotenv").config();
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -26,6 +27,14 @@ require("./routes/api-routes.js")(app);
 
 //require for testing purposes
 require("./public/js/api.js");
+
+//config will read the .env file, parse the contents, assign it to the process.env file
+//and return an object with a parsed key containing the loaded content or an error key if it failed
+const result = dotenv.config();
+if (result.error) {
+  throw result.error;
+}
+console.log(result.parsed);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
