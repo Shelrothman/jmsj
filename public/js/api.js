@@ -1,7 +1,9 @@
 const unirest = require("unirest");
 
-const req = unirest("GET", "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup");
-
+const req = unirest(
+  "GET",
+  "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup"
+);
 
 req.query({
 	"country": "us",
@@ -11,7 +13,7 @@ req.query({
 
 req.headers({
 	"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-	"x-rapidapi-key": "eaa1d6641dmsh4c1b0d7b7ae1fb5p1b674cjsnb2498b69433e",
+	"x-rapidapi-key": process.env.X_RAPID_API_KEY,
 	"useQueryString": true
 });
 
@@ -19,12 +21,13 @@ req.headers({
 req.end(function (res) {
 	if (res.error) throw new Error(res.error);
 
-    console.log(res.body.collection.name)
-    console.log(res.body.collection.picture)
+	console.log(res.body.collection.name)
+	console.log(res.body.collection.picture)
 	console.log(res.body.collection.locations[0].display_name);
+	console.log(process.env.X_RAPID_API_KEY)
 })
 
 
 
-  
+
 
