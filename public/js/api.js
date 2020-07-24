@@ -2,6 +2,7 @@ const unirest = require("unirest");
 
 const req = unirest("GET", "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup");
 
+
 req.query({
 	"country": "us",
 	"source_id": "tt3398228",
@@ -21,12 +22,9 @@ req.end(function (res) {
     console.log(res.body.collection.name)
     console.log(res.body.collection.picture)
 	console.log(res.body.collection.locations[0].display_name);
-	
-   
-});
+})
 
-var nameEl = document.getElementById("bingeName");
-	nameEl.textContent = res.body.collection.name;
+
 
   
 
