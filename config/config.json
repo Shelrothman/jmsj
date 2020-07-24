@@ -1,8 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "passport_demo",
+
+
+    "password": "hyunmh98",
+    "database": "binge_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -27,10 +27,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/index", (req, res) => {
-      res.render("index", {  });
+  app.get("/playlist", (req, res) => {
+    res.render("playlist", {});
+  });
 
+  app.get("/search", (req, res) => {
+    res.render("search", {});
   });
 };
-
-
