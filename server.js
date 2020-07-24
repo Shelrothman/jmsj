@@ -1,7 +1,8 @@
 // Requiring necessary npm packages
+require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
-const dotenv = require("dotenv").config();
+const exphbs = require("express-handlebars");
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -17,10 +18,17 @@ app.use(express.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+  session({
+    secret: process.env.X_RAPID_API_KEY,
+    resave: true,
+    saveUninitialized: true
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
@@ -31,11 +39,11 @@ require("./public/js/api.js");
 
 //config will read the .env file, parse the contents, assign it to the process.env file
 //and return an object with a parsed key containing the loaded content or an error key if it failed
-const result = dotenv.config();
-if (result.error) {
-  throw result.error;
-}
-console.log(result.parsed);
+
+// if (result.error) {
+//   throw result.error;
+// }
+// console.log(result.parsed);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
