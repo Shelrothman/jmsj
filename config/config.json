@@ -1,6 +1,8 @@
 {
   "development": {
     "username": "root",
+
+
     "password": "password",
     "database": "binge_db",
     "host": "127.0.0.1",
