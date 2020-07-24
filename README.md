@@ -10,3 +10,5 @@ Project 2
 
 `npm i passport`
 `npm i unirest`
+
+'npm install dotenv'
