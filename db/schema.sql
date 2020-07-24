@@ -1,16 +1,9 @@
-CREATE DATABASE binge_db;
+DROP DATABASE IF EXISTS binge_db;
 
--- table for users --
-CREATE TABLE binges
-(
-	id INTEGER NOT NULL AUTO_INCREMENT,
-    userId INTEGER NOT NULL,
-	title varchar(255) NOT NULL,
-	presentlyWatching BOOLEAN DEFAULT false,
-    alreadyWatched BOOLEAN DEFAULT false,
-	PRIMARY KEY (id)
-    FOREIGN KEY (userId) REFERENCES users(id)
-);
+CREATE DATABASE binge_db;
+USE binge_db;
+
+-- create first: table for users --
 
 CREATE TABLE users
 (
@@ -20,3 +13,16 @@ CREATE TABLE users
 	PRIMARY KEY (id)
  
 );
+
+-- create second: table for users --
+CREATE TABLE binges
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    userId INTEGER NOT NULL,
+	title varchar(255) NOT NULL,
+	presentlyWatching BOOLEAN DEFAULT false,
+    alreadyWatched BOOLEAN DEFAULT false,
+	PRIMARY KEY (id),
+    FOREIGN KEY (userId) REFERENCES users(id)
+);
+
