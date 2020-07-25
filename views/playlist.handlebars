@@ -1,61 +1,83 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">The Binge Guide!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Playlist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <a class="navbar-brand" href="#">The Binge Guide!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="search">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="playlist">Playlist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
-                <h2 class="text-center bg-primary">Not Watched Yet</h2>
-                <br>
-                <div class="text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque libero quaerat maxime id vitae
-                    delectus natus molestiae ad quasi? Fugit labore quis distinctio dicta sapiente mollitia accusamus
-                    veniam nesciunt amet.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab corrupti labore rem ipsum, earum esse,
-                    officia nobis quos voluptas quidem ipsam! Excepturi harum, culpa tenetur maiores hic officia
-                    incidunt! Quisquam.
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Not Watched Yet</h5>
+                    <p class="card-text">
+                        How I Met Your Mother
+                        <button type="submit" class="btn btn-default bg-light btn-sm bt-sm ml-2">Currently
+                            Watching</button>
+                    </p>
+                    <p class="card-text">
+                        Pulp Fiction
+                        <button type="submit" class="btn btn-default bg-light btn-sm ml-2">Currently
+                            Watching</button>
+                    </p>
+                    <p class="card-text">
+                        Frozen
+                        <button type="submit" class="btn btn-default bg-light btn-sm ml-2">Currently
+                            Watching</button>
+                    </p>
+
                 </div>
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
-                <h2 class="text-center">Currently Watching</h2>
-                <br>
-                <div class="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At, omnis. Nostrum vero labore laborum
-                    tempore assumenda! Aliquam sunt amet blanditiis sed officia! Aliquid itaque ab velit impedit, sequi
-                    dolor. Maxime!
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas totam iure autem, dolor itaque,
-                    in quidem recusandae reiciendis quo culpa aperiam aliquam velit delectus hic nemo omnis amet
-                    blanditiis perspiciatis.
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Currently Watching</h5>
+                    <p class="card-text">
+                        Bojack Horseman
+                        <button type="submit" class="btn btn-default bg-light btn-sm ml-2">Finished
+                            Watching</button>
+                    </p>
+                    <p class="card-text">
+                        The Avengers
+                        <button type="submit" class="btn btn-default bg-light btn-sm ml-2">Finished
+                            Watching</button>
+                    </p>
+                    <p class="card-text">
+                        Parasite
+                        <button type="submit" class="btn btn-default bg-light btn-sm ml-2">Finished
+                            Watching</button>
+                    </p>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
-                <h2 class="text-center">Finished Watching</h2>
-                <br>
-                <div class="text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolorem autem quia harum? Velit
-                    officia minus excepturi ut voluptatem quia, illo, maiores et odio sit doloremque harum assumenda
-                    nesciunt iste!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad eos iure, dicta, voluptatem, nihil
-                    ipsam dignissimos repellendus sequi mollitia voluptas saepe nobis explicabo adipisci fugit iusto est
-                    fugiat corrupti velit.
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-4 mt-3">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Finished Watching</h5>
+                    <p class="card-text">
+                        Holes
+                    </p>
+                    <p class="card-text">
+                        Forrest Gump
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</div>
