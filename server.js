@@ -33,9 +33,10 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/title-routes.js")(app);
 
 //require for testing purposes, eventually bring in dynamically
-require("./public/js/api.js");
+// require("./public/js/api.js");
 
 //config will read the .env file, parse the contents, assign it to the process.env file
 //and return an object with a parsed key containing the loaded content or an error key if it failed
