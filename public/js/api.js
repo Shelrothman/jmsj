@@ -2,6 +2,7 @@ const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 const testTitle = "bojack";
+
 const settings = {
   async: true,
   crossDomain: true,
