@@ -1,23 +1,24 @@
 const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
-const testTitle = "bojack";
+const testTitle = "Stranger Things";
 
-const settings = {
-  async: true,
-  crossDomain: true,
-  url:
-    "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" +
-    testTitle +
-    "&country=us",
+http://localhost:8080/api/Stranger%20Things
+
+//Need a function so that when the user enters a search, it generates the search, something like this:
+// $("#search-button").on("click", function () {
+//   var searchValue = $("#search-value").val();
+
+//   // clear input box
+//   $("#search-value").val("");
+
+//   (searchValue);
+// });
+
+$.ajax({
   method: "GET",
-  headers: {
-    "x-rapidapi-host":
-      "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-    "x-rapidapi-key": process.env.X_RAPID_API_KEY
-  }
-};
-$.ajax(settings).done(response => {
+  URL: "http://localhost:8080/api/Stranger%20Things"
+}).done(response => {
   const title = response.results[0];
   const platform = title.locations[0].display_name;
   const data = [
@@ -28,5 +29,6 @@ $.ajax(settings).done(response => {
       platform: platform
     }
   ];
+  console.log("Here is the data");
   console.log(data);
 });

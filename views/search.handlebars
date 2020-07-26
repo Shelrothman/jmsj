@@ -5,12 +5,14 @@
                 Find the movie or show you want to watch by entering the name into the search box below and clicking
                 search!
                 </h2>
+                <form id="search-form">
                 <div class="form-group mt-3">
-                    <input class="form-control" placeholder="Enter show or movie name">
+                    <input id="search-term" class="form-control" type="text" placeholder="Enter show or movie name">
                 </div>
                 <div class="text-center">
                     <button id="search-button" type="button" class="btn btn-primary">Search!</button>
                 </div>
+                </form>
         </div>
     </div>
 </div>
@@ -18,15 +20,38 @@
     <div class="row mt-4">
         <div class="bg-secondary align-self-center">
             <div class="card text-center">
-                <img class="card-img-top"
+                <img id="picture" class="card-img-top"
                     src="https://utellyassets9-1.imgix.net/api/Images/4e4d50a0040fd4500193202edbafce6a/Redirect"
                     alt="Search Image">
                 <div class="card-body">
-                    <h5 class="card-title">Bojack Horseman</h5>
-                    <p class="card-text">Available on Netflix and Hulu </p>
+                    <h5 id="title" class="card-title"></h5>
+                    <p id="platform" class="card-text"></p>
                     <button type="button" class="btn btn-secondary">Add to queue</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    //listen to click event on search button
+    document.getElementById("search-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        //get value of search input
+        var searchTerm = document.querySelector("#search-term").value;
+        console.log(searchTerm)
+        //append value to url that goes in fetch request
+        fetch("http://localhost:8080/api/" + searchTerm)
+            .then(data => data.json())
+            .then(data => {
+
+                document.querySelector("#title").innerHTML = data[0].title;
+                document.querySelector("#platform").innerHTML = "Available on " + data[0].platform;
+                document.querySelector("#picture").setAttribute("src", data[0].picture);
+                console.log(data)
+                console.log(data[0].title)
+            })
+
+    });
+
+
+</script>
