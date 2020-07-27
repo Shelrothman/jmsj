@@ -4,7 +4,6 @@ const $ = require("jquery")(window);
 
 module.exports = function(app) {
   app.get("/api/:title", (req, res) => {
-    // const testTitle = "Stranger Things";
     const settings = {
       async: true,
       crossDomain: true,
