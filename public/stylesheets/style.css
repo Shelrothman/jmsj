@@ -13,10 +13,11 @@ body {
   color: white;
   border-color: white;
   border-width: 3px;
+  border-style: groove;
 }
 
 .navbar {
   background-color: black;
   color: white;
-  
+
 }
