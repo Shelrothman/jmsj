@@ -10,30 +10,3 @@
 
 
 
-<button type="button" class="btn btn-secondary btn-small devour" value="{{ id }}">Devour It!</button>
-
-$(() => {
-  $(".currentwatch").on("click", function () {
-    const binge_id = this.value;
-    $.ajax({
-      method: "PATCH",
-      url: `/binges/${binge_id}/`,
-    }).then(() => {
-      // reload page to display devoured burger in proper column
-      location.reload();
-    });
-  });
-});
-
-$(() => {
-  $(".finishwatch").on("click", function () {
-    const binge_id = this.value;
-    $.ajax({
-      method: "PATCH",
-      url: `/binges/${binge_id}/finishwatch`,
-    }).then(() => {
-      // reload page to display devoured burger in proper column
-      location.reload();
-    });
-  });
-});
