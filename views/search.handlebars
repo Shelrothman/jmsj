@@ -5,14 +5,12 @@
                 Find the movie or show you want to watch by entering the name into the search box below and clicking
                 search!
                 </h2>
-                <form id="search-form">
                 <div class="form-group mt-3">
-                    <input id="search-term" class="form-control" type="text" placeholder="Enter show or movie name">
+                    <input class="form-control" placeholder="Enter show or movie name">
                 </div>
                 <div class="text-center">
-                    <button id="search-button" type="button" class="btn btn-primary">Search!</button>
+                    <button type="button" class="btn btn-primary">Search!</button>
                 </div>
-                </form>
         </div>
     </div>
 </div>
@@ -20,12 +18,12 @@
     <div class="row mt-4">
         <div class="bg-secondary align-self-center">
             <div class="card text-center">
-                <img id="picture" class="card-img-top"
+                <img class="card-img-top"
                     src="https://utellyassets9-1.imgix.net/api/Images/4e4d50a0040fd4500193202edbafce6a/Redirect"
                     alt="Search Image">
                 <div class="card-body">
-                    <h5 id="title" class="card-title"></h5>
-                    <p id="platform" class="card-text"></p>
+                    <h5 class="card-title">Bojack Horseman</h5>
+                    <p class="card-text">Available on Netflix and Hulu </p>
                     <button type="button" class="btn btn-secondary">Add to queue</button>
                 </div>
             </div>
@@ -51,12 +49,12 @@
             })
     });
 
-    $(function() { 
-    $('.nav-item').on('click','.nav', function ( e ) {
-        e.preventDefault();
-        $(this).parents('#nav').find('.active').removeClass('active').end().end().addClass('active');
-        $(activeTab).show();
+    $(function () {
+        $('.nav-item').on('click', '.nav', function (e) {
+            e.preventDefault();
+            $(this).parents('#nav').find('.active').removeClass('active').end().end().addClass('active');
+            $(activeTab).show();
+        });
     });
-});
 
 </script>
