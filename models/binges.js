@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    platform: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     presentlyWatching: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
