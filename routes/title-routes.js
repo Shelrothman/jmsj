@@ -2,8 +2,10 @@ const { JSDOM } = require("jsdom");
 const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 
+const db = require("../models");
+
 module.exports = function(app) {
-  app.get("/api/:title", (req, res) => {
+  app.get("/api/utelly/:title", (req, res) => {
     const settings = {
       async: true,
       crossDomain: true,
@@ -33,5 +35,16 @@ module.exports = function(app) {
 
       return res.json(data);
     });
+  });
+
+  app.post("/api/titles", (req, res) => {
+    db.Binge.create(req.body)
+      .then(dbTitle => {
+        res.json(dbTitle);
+      })
+      .catch(error => {
+        console.log(error);
+        res.status(500).end();
+      });
   });
 };
