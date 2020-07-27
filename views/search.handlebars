@@ -16,51 +16,20 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container bg-secondary">
     <div class="row mt-4">
         <div class="bg-secondary align-self-center">
             <div class="card text-center">
                 <img class="card-img-top"
                     src="https://utellyassets9-1.imgix.net/api/Images/4e4d50a0040fd4500193202edbafce6a/Redirect"
                     alt="Search Image">
-                <div class="card-body">
+                <div class="card-body bg-secondary">
                     <h5 id="title" class="card-title"></h5>
                     <p id="platform" class="card-text"></p>
-                    <button id="queue-button" type="button" class="btn btn-secondary">Add to queue</button>
+                    <button id="queue-button" type="button" class="btn btn-light">Add to queue</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-<script>
-    //listen to click event on search button
-    document.getElementById("search-button").addEventListener("click", function (e) {
-        e.preventDefault();
-        //get value of search input
-        var searchTerm = document.querySelector("#search-term").value;
-        console.log(searchTerm)
-        //append value to url that goes in fetch request
-        fetch("http://localhost:8080/api/" + searchTerm)
-            .then(data => data.json())
-            .then(data => {
-                document.querySelector("#title").innerHTML = data[0].title;
-                document.querySelector("#platform").innerHTML = "Available on " + data[0].platform;
-                document.querySelector("#picture").setAttribute("src", data[0].picture);
-                console.log(data)
-                console.log(data[0].title)
-            })
-    });
-
-    //Queue button
-    document.getElementById("queue-button").addEventListener("click", function (e) {
-        e.preventDefault();
-        location.href="/playlist"
-
-
-    });
-
-</script>
-=======
 <script src="/js/search.js"></script>
->>>>>>> 92cac79093b5225ffe1aaf3036d6dad657eb842a

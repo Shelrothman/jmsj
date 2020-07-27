@@ -29,7 +29,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.replace("/search");
         // If there's an error, log the error
       })
       .catch(err => {
