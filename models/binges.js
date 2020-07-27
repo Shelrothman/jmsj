@@ -6,11 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     presentlyWatching: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      defaultValue: false
     },
     alreadyWatched: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      defaultValue: false
     }
   });
 
