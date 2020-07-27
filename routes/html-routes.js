@@ -31,7 +31,8 @@ module.exports = function(app) {
     res.render("playlist", {});
   });
 
-  app.get("/search", (req, res) => {
-    res.render("search", {});
+  app.get("/search", isAuthenticated, (req, res) => {
+    res.render("search", { user: req.user });
+    console.log(req.user);
   });
 };
