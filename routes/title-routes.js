@@ -3,6 +3,8 @@ const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 
 const db = require("../models");
+// eslint-disable-next-line no-unused-vars
+const binges = require("../models/binges");
 
 module.exports = function(app) {
   // Adding an event listener for when the form is submitted
@@ -47,5 +49,30 @@ module.exports = function(app) {
         console.log(error);
         res.status(500).end();
       });
+  });
+
+  //get route for getting all of the binges
+  app.get("/api/titles", (req, res) => {
+    const query = {};
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
+    }
+    db.Binge.findAll({
+      where: query
+    }).then(dbBinge => {
+      res.json(dbBinge);
+    });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/titles/:id", (req, res) => {
+    db.Binge.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbTitle => {
+      console.log(dbTitle);
+      res.json(dbTitle);
+    });
   });
 };
