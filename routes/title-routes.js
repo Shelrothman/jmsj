@@ -3,9 +3,10 @@ const { window } = new JSDOM("");
 const $ = require("jquery")(window);
 
 const db = require("../models");
+// eslint-disable-next-line no-unused-vars
 const binges = require("../models/binges");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Adding an event listener for when the form is submitted
   app.get("/api/utelly/:title", (req, res) => {
     const settings = {
