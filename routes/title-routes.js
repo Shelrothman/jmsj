@@ -5,6 +5,7 @@ const $ = require("jquery")(window);
 const db = require("../models");
 
 module.exports = function(app) {
+  // Adding an event listener for when the form is submitted
   app.get("/api/utelly/:title", (req, res) => {
     const settings = {
       async: true,
