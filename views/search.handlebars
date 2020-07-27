@@ -6,12 +6,12 @@
                 search!
                 </h2>
                 <form id="search-form">
-                <div class="form-group mt-3">
-                    <input id="search-term" class="form-control" type="text" placeholder="Enter show or movie name">
-                </div>
-                <div class="text-center">
-                    <button id="search-button" type="button" class="btn btn-primary">Search!</button>
-                </div>
+                    <div class="form-group mt-3">
+                        <input id="search-term" class="form-control" type="text" placeholder="Enter show or movie name">
+                    </div>
+                    <div class="text-center">
+                        <button id="search-button" type="button" class="btn btn-primary">Search!</button>
+                    </div>
                 </form>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <h5 id="title" class="card-title"></h5>
                     <p id="platform" class="card-text"></p>
-                    <button type="button" class="btn btn-secondary">Add to queue</button>
+                    <button id="queue-button" type="button" class="btn btn-secondary">Add to queue</button>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
 </div>
 <script>
     //listen to click event on search button
-    document.getElementById("search-form").addEventListener("submit", function (e) {
+    document.getElementById("search-button").addEventListener("click", function (e) {
         e.preventDefault();
         //get value of search input
         var searchTerm = document.querySelector("#search-term").value;
@@ -53,5 +53,12 @@
 
     });
 
+    //Queue button
+    document.getElementById("queue-button").addEventListener("click", function (e) {
+        e.preventDefault();
+        location.href="/playlist"
+
+
+    });
 
 </script>
