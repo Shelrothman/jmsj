@@ -48,13 +48,4 @@
                 console.log(data[0].title)
             })
     });
-
-    $(function () {
-        $('.nav-item').on('click', '.nav', function (e) {
-            e.preventDefault();
-            $(this).parents('#nav').find('.active').removeClass('active').end().end().addClass('active');
-            $(activeTab).show();
-        });
-    });
-
 </script>
