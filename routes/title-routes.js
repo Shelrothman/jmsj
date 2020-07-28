@@ -63,7 +63,7 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for retrieving a single post
+  // Get route for retrieving a single title
   app.get("/api/titles/:id", (req, res) => {
     db.Binge.findOne({
       where: {
@@ -74,7 +74,7 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for retrieving a single post tp update to presently watching
+  // Get route for retrieving a single title to update to presently watching
   app.patch("/api/titles", (req, res) => {
     db.Binge.update(req.body, {
       where: {
