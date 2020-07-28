@@ -55,7 +55,7 @@ For any additional questions, please contact a Binger:
 ------------------------------------------
 ## Matthew Hyun
 #### GitHub: Myhyun
-#### E-mail: 
+#### E-mail: mattyihyun@gmail.com
 ------------------------------------------
 ## Shelby Rothman
 #### GitHub: Q118
