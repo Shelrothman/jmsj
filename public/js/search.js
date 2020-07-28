@@ -12,7 +12,7 @@ document.getElementById("search-button").addEventListener("click", e => {
   if (!searchTerm) {
     alert("please enter the title of your desired binge!");
   } else {
-    fetch("http://localhost:8080/api/utelly/" + searchTerm)
+    fetch("/api/utelly/" + searchTerm)
       .then(data => data.json())
       .then(data => {
         document.querySelector("#title").innerHTML = data[0].title;
