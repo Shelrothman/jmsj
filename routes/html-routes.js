@@ -22,6 +22,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/playlist", isAuthenticated, (req, res) => {
     // get the users playlist from the db
 
@@ -48,7 +49,6 @@ module.exports = function(app) {
         currentlyWatching,
         finishedWatching
       };
-      // return res.json(hbsData)
       // render playlist with the 3 arrays
       res.render("playlist", hbsData);
     });
