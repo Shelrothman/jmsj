@@ -4,18 +4,14 @@ $(() => {
       id: $(this).data("id"),
       presentlyWatching: true
     };
-
-    console.log(binge);
-
-    //  // Send the PUT request.
-    //     const id = this.value;
-    //     $.ajax({
-    //       method: "PUT",
-    //       url: `/api/titles/${binges_id}/presentlyWatching`
-    //     }).then(() => {
-    //       // reload page to display binge in proper column
-    //       location.reload();
-    //     });
+    $.ajax({
+      method: "PATCH",
+      url: "/api/titles",
+      data: binge
+    }).then(() => {
+      // reload page to display binge in proper column
+      location.reload();
+    });
   });
 
   // $(".finishwatch").on("click", function () {

@@ -77,7 +77,7 @@ module.exports = function(app) {
   });
 
   // Get route for retrieving a single post tp update to presently watching
-  app.put("/api/titles", (req, res) => {
+  app.patch("/api/titles", (req, res) => {
     db.Binge.update(req.body, {
       where: {
         id: req.body.id
