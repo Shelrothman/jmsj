@@ -75,4 +75,16 @@ module.exports = function(app) {
       res.json(dbTitle);
     });
   });
+
+  // Get route for retrieving a single post tp update to presently watching
+  app.put("/api/titles", (req, res) => {
+    db.Binge.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(dbTitle => {
+      console.log(dbTitle);
+      res.json(dbTitle);
+    });
+  });
 };
