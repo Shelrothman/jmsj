@@ -21,8 +21,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Binge.associate = function(models) {
-    // We're saying that a Binge should belong to an User
-    // A Binge can't be created without a User due to the foreign key constraint
     Binge.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

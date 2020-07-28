@@ -34,7 +34,6 @@ module.exports = function(app) {
           platform: platform
         }
       ];
-      console.log(data);
 
       return res.json(data);
     });
@@ -71,7 +70,6 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(dbTitle => {
-      console.log(dbTitle);
       res.json(dbTitle);
     });
   });
@@ -83,7 +81,6 @@ module.exports = function(app) {
         id: req.body.id
       }
     }).then(dbTitle => {
-      console.log(dbTitle);
       res.json(dbTitle);
     });
   });
